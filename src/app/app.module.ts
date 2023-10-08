@@ -1,16 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountsService } from './accounts.service';
+import { LoggingService } from './logging.service';
+import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { CounterService } from './counter.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AccountComponent,
+    NewAccountComponent,
+    InactiveUsersComponent,
+    ActiveUsersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AccountsService, LoggingService, CounterService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
